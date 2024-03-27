@@ -5,7 +5,7 @@ This repository is builds a docker images with the latest releases of [GDAL](htt
 [PROJ](https://github.com/OSGeo/proj/releases), and [GEOS](https://github.com/libgeos/geos/releases) as well as a selection of recent version of R spatial packages.
 
 The docker images are published here:
-[https://github.com/mapme-initiative/mapme-spatial/pkgs/container/mapme-spatial](https://github.com/mapme-initiative/mapme-docker/pkgs/container/mapme-spatial)
+[https://github.com/mapme-initiative/mapme-docker/pkgs/container/mapme-spatial](https://github.com/mapme-initiative/mapme-docker/pkgs/container/mapme-spatial)
 
 The images are based on [rocker](https://rocker-project.org/). If you wanted to run
 R Studio on `localhost:8787` run:
