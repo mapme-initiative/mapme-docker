@@ -12,7 +12,7 @@ NCPUS=${NCPUS:-1}
 LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # install sf and terra dev versions
-Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster"))' 
+Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster", "mapme-initiative/mapme.biodiversity"))' 
 
 # install r packages as binaries
 install2.r --error --skipmissing --skipinstalled -n $NCPUS \
@@ -23,7 +23,6 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     gstat \
     hdf5r \
     leaflet \
-    mapme.biodiversity \
     mapview \
     ncdf4 \
     nngeo \
