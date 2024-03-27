@@ -1,7 +1,7 @@
 # mapme-docker
 
 
-This repository is builds a docker images with the latest releases of [GDAL](https://github.com/OSGeo/gdal/releases), 
+This repository builds docker images with the latest releases of [GDAL](https://github.com/OSGeo/gdal/releases), 
 [PROJ](https://github.com/OSGeo/proj/releases), and [GEOS](https://github.com/libgeos/geos/releases) as well as a selection of recent version of R spatial packages.
 
 The docker images are published here:
