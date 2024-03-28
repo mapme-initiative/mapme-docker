@@ -1,4 +1,4 @@
-name: Docker Image CI - mapme-spatial
+name: Docker Image CI - mapme-spatial-dev
 on:
   workflow_dispatch: null
   schedule:
@@ -18,9 +18,9 @@ jobs:
           registry: ghcr.io
           username: ${{github.actor}}
           password: ${{secrets.GITHUB_TOKEN}}
-      - name: Build the (mapme-spatial) Docker image
+      - name: Build the (mapme-spatial-dev) Docker image
         if: github.repository == 'mapme-initiative/mapme-docker'
         run: docker build -f dockerfiles/mapme-spatial-dev.Dockerfile . --tag ghcr.io/mapme-initiative/mapme-docker:mapme-spatial-dev
-      - name: Publish (mapme-spatial)
+      - name: Publish (mapme-spatial-dev)
         if: github.repository == 'mapme-initiative/mapme-docker'
         run: docker push ghcr.io/mapme-initiative/mapme-docker:mapme-spatial-dev
