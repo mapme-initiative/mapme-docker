@@ -20,3 +20,7 @@ To build the docker image locally run:
 docker build -f dockerfiles/mapme-spatial.Dockerfile -t mapme-spatial:latest .
 ```
 
+## Credits
+
+The implementation is based on [`mdsumner/gdal-builds`](https://github.com/mdsumner/gdal-builds) which is highly
+recommended if you are interested in bleeding-edge GDAL builds and/or Python tooling. 
