@@ -12,7 +12,8 @@ NCPUS=${NCPUS:-1}
 LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 # install sf and terra dev versions
-Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster", "mapme-initiative/mapme.biodiversity"))' 
+Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster"))'
+Rscript -e 'remotes::install_github("mapme-initiative/mapme.biodiversity", dependencies = TRUE)' 
 
 # install r packages as binaries
 install2.r --error --skipmissing --skipinstalled -n $NCPUS \
