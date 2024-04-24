@@ -48,7 +48,7 @@ install2.r --error --skipmissing --skipinstalled --ncpus $NCPUS \
     tmap 
     
 # install mapme.biodiversity from CRAN
-install2.r --error --skipmissing --skipinstalled --deps --ncpus $NCPUS mapme.biodiversity
+install2.r --error --skipmissing --skipinstalled --deps TRUE --ncpus $NCPUS mapme.biodiversity
     
 # cleanup
 rm -r /tmp/downloaded_packages
