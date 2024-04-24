@@ -11,8 +11,8 @@ For `mapme-spatial:1.0` these are:
 - gdal=3.8.5
 
 The docker images are published here:
-[https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial) and
-[https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev)
+- [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial)
+- [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev)
 
 
 The images are based on [rocker](https://rocker-project.org/). If you wanted to run
