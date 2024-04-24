@@ -15,15 +15,18 @@ LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster", "appelmar/gdalcubes"))'
 
 # install r packages as binaries
-install2.r --error --skipmissing --skipinstalled -n $NCPUS \
+install2.r --error --skipmissing --skipinstalled --ncpus $NCPUS \
     classInt \
     devtools \
+    exactextractr \
     gdalcubes \
+    geodata \
     ggplot2 \
     gstat \
     hdf5r \
+    here \
     leaflet \
-    mapme.biodiversity \
+    lwgeom \
     mapview \
     ncdf4 \
     nngeo \
@@ -43,6 +46,9 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     stars \
     testthat \
     tmap 
+    
+# install mapme.biodiversity from CRAN
+install2.r --error --skipmissing --skipinstalled --deps --ncpus $NCPUS mapme.biodiversity
     
 # cleanup
 rm -r /tmp/downloaded_packages

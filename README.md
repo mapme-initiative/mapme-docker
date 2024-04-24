@@ -6,9 +6,9 @@ This repository builds docker images with the latest releases of [GDAL](https://
 
 For `mapme.docker:1.0` these are:
 
-- proj 9.4.0
-- geos 3.12.1
-- gdal 3.8.5
+- proj=9.4.0
+- geos=3.12.1
+- gdal=3.8.5
 
 The docker images are published here:
 [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-docker](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-docker)

@@ -19,11 +19,15 @@ Rscript -e 'remotes::install_github("mapme-initiative/mapme.biodiversity", depen
 install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     classInt \
     devtools \
+    exactextractr \
     gdalcubes \
+    geodata \
     ggplot2 \
     gstat \
     hdf5r \
+    here \
     leaflet \
+    lwgeom \
     mapview \
     ncdf4 \
     nngeo \
