@@ -2,7 +2,7 @@ name: Docker Image CI - mapme-spatial-dev
 on:
   workflow_dispatch: null
   schedule:
-    - cron: "0 4 * * *"
+    - cron: '0 0,8 * * *'
   push:
     paths: ['dockerfiles/mapme-spatial-dev.Dockerfile', '.github/workflows/docker-mapme-spatial-dev.yml', 'scripts/install_sysdeps.sh', 'scripts/install_rspatial_dev.sh']
 jobs:
@@ -20,7 +20,7 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build the (mapme-spatial-dev) Docker image
         if: github.repository == 'mapme-initiative/mapme-docker'
-        run: docker build -f dockerfiles/mapme-spatial-dev.Dockerfile . --tag ghcr.io/mapme-initiative/mapme-docker:mapme-spatial-dev
+        run: docker build -f dockerfiles/mapme-spatial-dev.Dockerfile . --tag ghcr.io/mapme-initiative/mapme-spatial-dev:1.0
       - name: Publish (mapme-spatial-dev)
         if: github.repository == 'mapme-initiative/mapme-docker'
-        run: docker push ghcr.io/mapme-initiative/mapme-docker:mapme-spatial-dev
+        run: docker push ghcr.io/mapme-initiative/mapme-spatial-dev:1.0

@@ -12,9 +12,9 @@ COPY scripts/install_rspatial.sh /rocker_scripts/install_rspatial.sh
 RUN chmod +x /rocker_scripts/install_sysdeps.sh
 RUN chmod +x /rocker_scripts/install_rspatial.sh
 
-ARG PROJ_VERSION=latest
-ARG GEOS_VERSION=latest
-ARG GDAL_VERSION=latest
+ARG PROJ_VERSION=9.4.0
+ARG GEOS_VERSION=3.12.1
+ARG GDAL_VERSION=3.8.5
 ARG NCPUS=-1
 
 RUN bash /rocker_scripts/install_sysdeps.sh -proj $PROJ_VERSION -geos $GEOS_VERSION -gdal $GDAL_VERSION -ncpus $NCPUS
