@@ -2,7 +2,7 @@ name: Docker Image CI - mapme-spatial-dev
 on:
   workflow_dispatch: null
   schedule:
-    - cron: '0 0,8 * * *'
+    - cron: "0 4 * * *"
   push:
     paths: ['dockerfiles/mapme-spatial-dev.Dockerfile', '.github/workflows/docker-mapme-spatial-dev.yml', 'scripts/install_sysdeps.sh', 'scripts/install_rspatial_dev.sh']
 jobs:
