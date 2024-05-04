@@ -1,0 +1,85 @@
+name: Docker Image CI - mapme-spatial
+on:
+  workflow_dispatch: null
+  schedule:
+    - cron: "0 4 * * *"
+  push:
+    branches: [main, master]
+    paths: ['dockerfiles/mapme-base.Dockerfile', 'dockerfiles/mapme-spatial.Dockerfile', 'dockerfiles/mapme-spatial-dev.Dockerfile','.github/workflows/docker-mapme.yml', 'scripts/install_sysdeps.sh', 'scripts/install_rspatial.sh', 'scripts/install_rspatial_dev.sh']
+  pull_request:
+    branches: [main, master]
+env:
+  tag: 1.1.0
+  
+jobs:
+
+  build-base:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build the mapme-base docker image
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        run: |
+          docker build -f dockerfiles/mapme-base.Dockerfile \
+           --tag ghcr.io/mapme-initiative/mapme-base:$tag \
+           --tag ghcr.io/mapme-initiative/mapme-base:latest \
+           .
+      - name: Publish mapme-base
+        if: github.repository == 'mapme-initiative/mapme-docker' && github.event_name != 'pull_request'
+        run: docker push ghcr.io/mapme-initiative/mapme-base --all-tags 
+        
+  build-spatial:
+    needs: build-base
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build the mapme-spatial docker image
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        run: |
+          docker build -f dockerfiles/mapme-spatial.Dockerfile \
+           --tag ghcr.io/mapme-initiative/mapme-spatial:$tag \
+           --tag ghcr.io/mapme-initiative/mapme-spatial:latest \
+           .
+      - name: Publish mapme-spatial
+        if: github.repository == 'mapme-initiative/mapme-docker' && github.event_name != 'pull_request'
+        run: docker push ghcr.io/mapme-initiative/mapme-spatial --all-tags
+        
+  build-spatial-dev:
+    needs: build-base
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GITHUB_TOKEN}}
+      - name: Build the mapme-spatial-dev docker image
+        if: github.repository == 'mapme-initiative/mapme-docker'
+        run: |
+          docker build -f dockerfiles/mapme-spatial-dev.Dockerfile \
+           --tag ghcr.io/mapme-initiative/mapme-spatial-dev:$tag \
+           --tag ghcr.io/mapme-initiative/mapme-spatial-dev:latest \
+           .
+      - name: Publish mapme-spatial-dev
+        if: github.repository == 'mapme-initiative/mapme-docker' && github.event_name != 'pull_request'
+        run: docker push ghcr.io/mapme-initiative/mapme-spatial-dev --all-tags
