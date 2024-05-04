@@ -1,4 +1,4 @@
-FROM mapme-base:latest
+FROM ghcr.io/mapme-initiative/mapme-base:latest
 
 LABEL org.opencontainers.image.licenses="GPL-3.0-or-later" \
       org.opencontainers.image.source="https://github.com/mapme.initiative/mapme-docker" \
