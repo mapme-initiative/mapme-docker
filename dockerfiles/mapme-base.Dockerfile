@@ -1,7 +1,6 @@
 FROM rocker/verse:4.3.2
 
-LABEL 
-      org.opencontainers.image.title="mapme-base" \
+LABEL org.opencontainers.image.title="mapme-base" \
       org.opencontainers.image.licenses="GPL-3.0-or-later" \
       org.opencontainers.image.source="https://github.com/mapme.initiative/mapme-docker" \
       org.opencontainers.image.vendor="MAPME Initiative" \
