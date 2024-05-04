@@ -27,7 +27,8 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build the mapme-base docker image
         if: github.repository == 'mapme-initiative/mapme-docker'
-        run: docker build -f dockerfiles/mapme-base.Dockerfile \
+        run: |
+          docker build -f dockerfiles/mapme-base.Dockerfile \
            --tag ghcr.io/mapme-initiative/mapme-base:$tag \
            --tag ghcr.io/mapme-initiative/mapme-base:latest \
            .
@@ -50,7 +51,8 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build the mapme-spatial docker image
         if: github.repository == 'mapme-initiative/mapme-docker'
-        run: docker build -f dockerfiles/mapme-spatial.Dockerfile \
+        run: |
+          docker build -f dockerfiles/mapme-spatial.Dockerfile \
            --tag ghcr.io/mapme-initiative/mapme-spatial:$tag \
            --tag ghcr.io/mapme-initiative/mapme-spatial:latest \
            .
@@ -73,7 +75,8 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build the mapme-spatial-dev docker image
         if: github.repository == 'mapme-initiative/mapme-docker'
-        run: docker build -f dockerfiles/mapme-spatial-dev.Dockerfile \
+        run: |
+          docker build -f dockerfiles/mapme-spatial-dev.Dockerfile \
            --tag ghcr.io/mapme-initiative/mapme-spatial-dev:$tag \
            --tag ghcr.io/mapme-initiative/mapme-spatial-dev:latest \
            .
