@@ -19,7 +19,7 @@ The images are based on [rocker](https://rocker-project.org/). If you wanted to 
 R Studio on `localhost:8787` run:
 
 ```bash
-docker run --rm -p 8787:8787 -e PASSWORD=supersecret ghcr.io/mapme-initiative/mapme-spatial:1.0
+docker run --rm -p 8787:8787 -e PASSWORD=supersecret ghcr.io/mapme-initiative/mapme-spatial:latest
 ```
 
 To build the docker image locally run:
