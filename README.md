@@ -8,7 +8,7 @@ For `mapme-spatial:1.0` these are:
 
 - proj=9.4.0
 - geos=3.12.1
-- gdal=3.8.5
+- gdal=3.9.0
 
 The docker images are published here:
 - [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial)
