@@ -14,10 +14,13 @@ LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # install sf and terra dev versions
 Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster"))'
 Rscript -e 'remotes::install_github("mapme-initiative/mapme.biodiversity", dependencies = TRUE)' 
+Rscript -e 'remotes::install_github("mapme-initiative/mapme.indicators", dependencies = TRUE)' 
+Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependencies = TRUE)' 
 
 # install r packages as binaries
 install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     classInt \
+    config \
     devtools \
     exactextractr \
     gdalcubes \
@@ -27,6 +30,7 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     hdf5r \
     here \
     leaflet \
+    logger \
     lwgeom \
     mapview \
     ncdf4 \
@@ -45,6 +49,7 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     spatialreg \
     spdep \
     stars \
+    targets \
     testthat \
     tmap 
     
