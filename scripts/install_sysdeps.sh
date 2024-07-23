@@ -94,10 +94,19 @@ apt_install \
         screen \
         wget
         
+# install DVC
+wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list \
+  && wget -qO - https://dvc.org/deb/iterative.asc | gpg --dearmor > packages.iterative.gpg \
+  && install -o root -g root -m 644 packages.iterative.gpg /etc/apt/trusted.gpg.d \
+  && rm -f packages.iterative.gpg \
+  && apt update \
+  && apt install dvc 
+        
 # geoparquet sysdeps
-wget https://apache.jfrog.io/artifactory/arrow/"$(lsb_release --id --short | tr '[:upper:]' '[:lower:]')"/apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb
-apt_install -y -V ./apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb
-apt-get update && apt-get install -y -V libarrow-dev libparquet-dev libarrow-dataset-dev	
+wget https://apache.jfrog.io/artifactory/arrow/"$(lsb_release --id --short | tr '[:upper:]' '[:lower:]')"/apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb \
+  && apt_install -y -V ./apache-arrow-apt-source-latest-"$(lsb_release --codename --short)".deb \
+  && apt-get update \
+  && apt-get install -y -V libarrow-dev libparquet-dev libarrow-dataset-dev	
 
 locale-gen en_US.UTF-8
 
