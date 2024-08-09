@@ -58,6 +58,7 @@ function apt_install() {
 }
 
 apt_install \
+        libavfilter-dev \
 	libcairo2-dev \
 	libcurl4-openssl-dev \
 	libexpat1-dev \
@@ -83,6 +84,7 @@ apt_install \
 	libgit2-dev \
 	libtiff-dev \
 	cmake \
+	cargo \
 	locales \
 	netcdf-bin \
         postgis \

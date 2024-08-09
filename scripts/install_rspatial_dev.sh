@@ -11,19 +11,21 @@ done
 NCPUS=${NCPUS:-1}
 LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
-# install sf and terra dev versions
-Rscript -e 'remotes::install_github(c("r-spatial/sf", "rspatial/terra", "USDAForestService/gdalraster"))'
+# install spatial packages from source
+install2.r --deps TRUE --ncpus $NCPUS --type source --repos https://cloud.r-project.org \
+    sf \
+    stars \
+    terra \
+    gdalcubes
+
+# install mapme packages 
 Rscript -e 'remotes::install_github("mapme-initiative/mapme.biodiversity", dependencies = TRUE)' 
 Rscript -e 'remotes::install_github("mapme-initiative/mapme.indicators", dependencies = TRUE)' 
 Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependencies = TRUE)' 
 
-# install r packages as binaries
-install2.r --error --skipmissing --skipinstalled -n $NCPUS \
-    classInt \
-    config \
+# install additional r packages
+install2.r --error --skipmissing --skipinstalled --ncpus $NCPUS \
     devtools \
-    exactextractr \
-    gdalcubes \
     geodata \
     ggplot2 \
     gstat \
@@ -31,13 +33,10 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     here \
     leaflet \
     logger \
-    lwgeom \
     mapview \
     ncdf4 \
     nngeo \
     openxlsx2 \
-    proj4 \
-    purrr \
     RColorBrewer \
     RNetCDF \
     RPostgreSQL \
@@ -48,10 +47,8 @@ install2.r --error --skipmissing --skipinstalled -n $NCPUS \
     spatstat \
     spatialreg \
     spdep \
-    stars \
     targets \
-    testthat \
-    tmap 
+    tmap  
     
 # cleanup
 rm -r /tmp/downloaded_packages
