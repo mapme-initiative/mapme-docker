@@ -4,12 +4,6 @@
 This repository builds docker images with the latest releases of [GDAL](https://github.com/OSGeo/gdal/releases), 
 [PROJ](https://github.com/OSGeo/proj/releases), and [GEOS](https://github.com/libgeos/geos/releases) as well as a selection of recent version of R spatial packages.
 
-For `mapme-spatial:1.2.0` these are:
-
-- proj=9.4.0
-- geos=3.12.1
-- gdal=3.9.0
-
 The docker images are published here:
 - [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial)
 - [https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev](https://github.com/orgs/mapme-initiative/packages/container/package/mapme-spatial-dev)
