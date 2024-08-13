@@ -60,6 +60,7 @@ function apt_install() {
 apt_install \
         libavfilter-dev \
 	libcairo2-dev \
+	libblosc-dev \
 	libcurl4-openssl-dev \
 	libexpat1-dev \
 	libpq-dev \
