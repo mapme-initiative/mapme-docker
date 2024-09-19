@@ -11,9 +11,9 @@ COPY scripts/install_sysdeps.sh /rocker_scripts/install_sysdeps.sh
 
 RUN chmod +x /rocker_scripts/install_sysdeps.sh
 
-ARG PROJ_VERSION=9.4.1
-ARG GEOS_VERSION=3.12.2
-ARG GDAL_VERSION=3.9.1
+ARG PROJ_VERSION=9.5.0
+ARG GEOS_VERSION=3.13.0
+ARG GDAL_VERSION=3.9.2
 ARG NCPUS=-1
 
 RUN bash /rocker_scripts/install_sysdeps.sh -proj $PROJ_VERSION -geos $GEOS_VERSION -gdal $GDAL_VERSION -ncpus $NCPUS
