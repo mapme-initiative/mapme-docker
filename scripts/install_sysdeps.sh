@@ -59,13 +59,13 @@ function apt_install() {
 
 apt_install \
         libavfilter-dev \
-	libcairo2-dev \
-	libblosc-dev \
-	libcurl4-openssl-dev \
-	libexpat1-dev \
-	libpq-dev \
-	libsqlite3-dev \
-	libudunits2-dev \
+        libcairo2-dev \
+        libblosc-dev \
+        libcurl4-openssl-dev \
+        libexpat1-dev \
+        libpq-dev \
+        libsqlite3-dev \
+        libudunits2-dev \
         lbzip2 \
         libfftw3-dev \
         libgsl0-dev \
@@ -74,20 +74,21 @@ apt_install \
         libhdf4-alt-dev \
         libhdf5-dev \
         libjq-dev \
+        libkml-dev \
         libpq-dev \
         libprotobuf-dev \
         libnetcdf-dev \
         libssl-dev \
         libtiff5-dev \
-	libopenjp2-7-dev \
+        libopenjp2-7-dev \
         libxml2-dev \
         libssh2-1-dev \
-	libgit2-dev \
-	libtiff-dev \
-	cmake \
-	cargo \
-	locales \
-	netcdf-bin \
+        libgit2-dev \
+        libtiff-dev \
+        cmake \
+        cargo \
+        locales \
+        netcdf-bin \
         postgis \
         unixodbc-dev \
         protobuf-compiler \
