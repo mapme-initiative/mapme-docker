@@ -20,7 +20,6 @@ install2.r --deps TRUE --ncpus $NCPUS --type source --repos https://cloud.r-proj
     mapme.biodiversity 
     
 # install mapme packages 
-Rscript -e 'remotes::install_github("mapme-initiative/mapme.indicators", dependencies = TRUE)'
 Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependencies = TRUE)' 
     
 # install additional r packages
