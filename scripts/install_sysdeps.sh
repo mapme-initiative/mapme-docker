@@ -96,7 +96,8 @@ apt_install \
         tk-dev \
         htop \
         screen \
-        wget
+        wget \
+        nano
         
 # install DVC
 wget https://dvc.org/deb/dvc.list -O /etc/apt/sources.list.d/dvc.list \
