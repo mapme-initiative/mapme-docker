@@ -25,7 +25,9 @@ Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependen
 
 # install additional r packages
 install2.r --error --skipmissing --skipinstalled --ncpus $NCPUS \
+    countrycodes \
     devtools \
+    flextable \
     geodata \
     ggplot2 \
     gstat \
