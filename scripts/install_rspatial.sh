@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-while getopts ncpus: flag
+DEV=0
+
+while getopts "dn:" flag
 do
     case "${flag}" in
-        ncpus) NCPUS=${OPTARG};;
+        n) NCPUS=${OPTARG};;
+        d) DEV=1;;
     esac
 done
 
@@ -16,11 +19,20 @@ install2.r --deps TRUE --ncpus $NCPUS --type source --repos https://cloud.r-proj
     sf \
     stars \
     terra \
-    gdalcubes \
-    mapme.biodiversity 
+    gdalcubes
     
-# install mapme packages 
-Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependencies = TRUE)' 
+# install mapme.biodiversity dev or cran version
+if [ $DEV -eq 1 ]; then
+  echo "Installing dev version of mapme.biodiversity"
+  Rscript -e 'remotes::install_github("mapme-initiative/mapme.biodiversity", dependencies = TRUE)'
+else
+  echo "Installing CRAN version of mapme.biodiversity"
+  install2.r --deps TRUE --ncpus $NCPUS --type source --repos https://cloud.r-project.org \
+    mapme.biodiversity
+fi
+
+# install other mapme packages from github
+Rscript -e 'remotes::install_github("mapme-initiative/mapme.pipelines", dependencies = TRUE)'
     
 # install additional r packages
 install2.r --error --skipmissing --skipinstalled --ncpus $NCPUS \

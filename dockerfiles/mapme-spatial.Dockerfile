@@ -10,4 +10,4 @@ LABEL org.opencontainers.image.title="mapme-spatial" \
 COPY scripts/install_rspatial.sh /rocker_scripts/install_rspatial.sh
 RUN chmod +x /rocker_scripts/install_rspatial.sh
 ARG NCPUS=-1
-RUN bash /rocker_scripts/install_rspatial.sh -ncpus $NCPUS
+RUN bash /rocker_scripts/install_rspatial.sh -n $NCPUS
